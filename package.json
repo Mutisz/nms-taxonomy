@@ -4,6 +4,7 @@
   "description": "Name generator for No Man's Sky",
   "author": "Coral Software Mateusz Tokarski",
   "license": "GPL-3.0",
+  "homepage": "https://mutisz.github.io/nms-taxonomy/",
   "main": "src/index.js",
   "repository": {
     "type": "git",
