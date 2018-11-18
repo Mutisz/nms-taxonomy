@@ -1,10 +1,14 @@
 {
   "name": "nms-taxonomy",
-  "version": "0.1.0",
-  "description": "Simple application for generating names for No Man's Sky discoveries",
+  "version": "1.0.0",
+  "description": "Name generator for No Man's Sky",
   "author": "Coral Software Mateusz Tokarski",
   "license": "GPL-3.0",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mutisz/nms-taxonomy"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -14,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,6 +43,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",
+    "gh-pages": "^2.0.1",
     "prettier": "1.15.1"
   }
 }
