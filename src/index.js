@@ -12,21 +12,28 @@ import { ApolloProvider } from "react-apollo";
 import App from "./components/App";
 
 const cache = new InMemoryCache();
+const storage = window.localStorage;
+
+const createClient = () =>
+  new ApolloClient({
+    cache,
+    link: withClientState({ defaults, typeDefs, resolvers })
+  });
+
+const renderApp = () => {
+  render(
+    <ApolloProvider client={createClient()}>
+      <App />
+    </ApolloProvider>,
+    document.getElementById("root")
+  );
+
+  registerServiceWorker();
+};
+
 persistCache({
-  cache,
-  storage: window.localStorage
-});
-
-const client = new ApolloClient({
-  cache,
-  link: withClientState({ defaults, typeDefs, resolvers })
-});
-
-render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
-  document.getElementById("root")
-);
-
-registerServiceWorker();
+  cache: cache,
+  storage: storage
+})
+  .then(renderApp)
+  .catch(error => console.error(error));
