@@ -45,6 +45,7 @@ import {
   TEMPERAMENT_VOLATILE
 } from "./fauna";
 
+// Using Great Old Ones (mostly alphabetically)
 const spectralClassMap = {
   O: {
     0: "Quyagen",
@@ -180,6 +181,7 @@ const spectralClassMap = {
   }
 };
 
+// Same as in Odin's convention
 const odditiesMap = {
   e: "ei",
   f: "ef",
@@ -194,44 +196,49 @@ const odditiesMap = {
   w: "uw"
 };
 
+// Using R'Lyehian translations
 const biomeMap = {
-  [BIOME_LUSH]: "ehyeeog",
-  [BIOME_BARREN]: "ehyenah",
-  [BIOME_AIRLESS]: "soth",
-  [BIOME_EXOTIC]: "r'luh",
-  [BIOME_SCORCHED]: "fm'latgh",
-  [BIOME_FROZEN]: "mgfm'latghnah",
-  [BIOME_TOXIC]: "n'ghanglui",
-  [BIOME_IRRADIATED]: "zhro shuggog"
+  [BIOME_LUSH]: "ehyeeog", // Many
+  [BIOME_BARREN]: "ahyog'nglui", // Empty
+  [BIOME_AIRLESS]: "soth", // Void
+  [BIOME_EXOTIC]: "r'luh", // Magic
+  [BIOME_SCORCHED]: "fm'latgh", // Burn
+  [BIOME_FROZEN]: "mgfm'latghnah", // Cold
+  [BIOME_TOXIC]: "n'ghanglui", // Disease
+  [BIOME_IRRADIATED]: "zhro shuggog" // End of the World
 };
 
+// Using R'Lyehian translations
 const sentinelMap = {
-  1: "ehye",
-  2: "ehyee",
-  3: "yeeogng",
-  4: "yeeognge",
-  5: "yeeognor",
-  6: "yeeogngn"
+  1: "ehye", // None
+  2: "fhtagn", // Sleeping
+  3: "nafl ehyeeog", // Not many
+  4: "nafl or'azath", // Not unusual
+  5: "mgehye'bthnk", // Attack
+  6: "mg'lloig" // Insane
 };
 
+// Using Welsh translations
 const faunaMap = {
-  1: "ehye",
-  2: "ehyee",
-  3: "yeeogng",
-  4: "yeeognge",
-  5: "yeeognor",
-  6: "yeeogngn"
+  1: "di osgoi", // Devoid
+  2: "yn fras", // Sparse
+  3: "cymedrol", // Moderate
+  4: "uchel", // High
+  5: "cyfoethog", // Rich
+  6: "llawn" // Full
 };
 
+// Using Welsh translations
 const floraMap = {
-  1: "ehye",
-  2: "ehyee",
-  3: "yeeogng",
-  4: "yeeognge",
-  5: "yeeognor",
-  6: "yeeogngn"
+  1: "di osgoi", // Devoid
+  2: "yn fras", // Sparse
+  3: "cymedrol", // Moderate
+  4: "uchel", // High
+  5: "cyfoethog", // Rich
+  6: "llawn" // Full
 };
 
+// Using Outer Gods (mostly at random)
 const temperamentMap = {
   [TEMPERAMENT_ACTIVE]: "Abhoth",
   [TEMPERAMENT_AMBULATORY]: "Aletheia",

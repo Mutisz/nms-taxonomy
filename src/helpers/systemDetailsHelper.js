@@ -1,4 +1,4 @@
-import { get, map, filter, upperFirst, replace, split, join } from "lodash";
+import { get, map, filter, upperFirst, split, join } from "lodash";
 import { generatePortmanteau } from "./portmanteauHelper";
 
 const SPECTRAL_CLASS_REGEXP = /^([OBAFGKMLTYE]{1})([0-9]{1})([efhkmnpqsvw]{0,2})$/;
