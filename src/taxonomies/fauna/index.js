@@ -1,0 +1,132 @@
+// GENUS
+
+// Terrestrial
+export const GENUS_TETRACERIS = "Tetraceris";
+export const GENUS_REOCOCCYX = "Reococcyx";
+export const GENUS_RAGNIFAE = "Rangifae";
+export const GENUS_THEROMA = "Theroma";
+export const GENUS_PROCAVYA = "Procavya";
+export const GENUS_CONOKINIS = "Conokinis";
+export const GENUS_UNGULATIS = "Ungulatis";
+export const GENUS_HEXUNGULATIS = "Hexungulatis";
+export const GENUS_FELIDAE = "Felidae";
+export const GENUS_FELIHEX = "Felihex";
+export const GENUS_ANASTOMUS = "Anastomus";
+export const GENUS_TYRANOCAE = "Tyranocae";
+export const GENUS_MOGARA = "Mogara";
+export const GENUS_LOK = "Lok";
+export const GENUS_BOS = "Bos";
+
+// Aquatic
+export const GENUS_ICTALORIS = "Ictaloris";
+export const GENUS_PRIONACE = "Prionace";
+export const GENUS_PRIONACEFDA = "Prionacefda";
+export const GENUS_UNKNOWN = "Unknown";
+
+// Aerial
+export const GENUS_AGNELIS = "Agnelis";
+export const GENUS_OXYACTA = "Oxyacta";
+export const GENUS_CYCROMYS = "Cycroms";
+export const GENUS_RHOPALOCERA = "Rhopalocera";
+
+export const DEFAULT_GENUS = GENUS_FELIDAE;
+export const AVAILABLE_GENUS_LIST = [
+  GENUS_TETRACERIS,
+  GENUS_REOCOCCYX,
+  GENUS_RAGNIFAE,
+  GENUS_THEROMA,
+  GENUS_PROCAVYA,
+  GENUS_CONOKINIS,
+  GENUS_UNGULATIS,
+  GENUS_HEXUNGULATIS,
+  GENUS_FELIDAE,
+  GENUS_FELIHEX,
+  GENUS_ANASTOMUS,
+  GENUS_TYRANOCAE,
+  GENUS_MOGARA,
+  GENUS_LOK,
+  GENUS_BOS,
+  GENUS_ICTALORIS,
+  GENUS_PRIONACE,
+  GENUS_PRIONACEFDA,
+  GENUS_UNKNOWN,
+  GENUS_AGNELIS,
+  GENUS_OXYACTA,
+  GENUS_CYCROMYS,
+  GENUS_RHOPALOCERA
+];
+
+// TEMPERAMENT
+
+export const TEMPERAMENT_ACTIVE = "Active";
+export const TEMPERAMENT_AMBULATORY = "Ambulatory";
+export const TEMPERAMENT_AGGRESIVE = "Aggresive";
+export const TEMPERAMENT_AMENABLE = "Amenable";
+export const TEMPERAMENT_ANXIOUS = "Anxious";
+export const TEMPERAMENT_BOLD = "Bold";
+export const TEMPERAMENT_CALM = "Calm";
+export const TEMPERAMENT_CAUTIOUS = "Cautious";
+export const TEMPERAMENT_CRUEL = "Cruel";
+export const TEMPERAMENT_DANGEROUS = "Dangerous";
+export const TEMPERAMENT_DEFENSIVE = "Defensive";
+export const TEMPERAMENT_DISTINCTIVE = "Distinctive";
+export const TEMPERAMENT_DOCILE = "Docile";
+export const TEMPERAMENT_ERRATIC = "Erratic";
+export const TEMPERAMENT_FEARFUL = "Fearful";
+export const TEMPERAMENT_HIBERNATOR = "Hibernator";
+export const TEMPERAMENT_HOSTILE = "Hostile";
+export const TEMPERAMENT_HUNTER = "Hunter";
+export const TEMPERAMENT_MIGRATORY = "Migratory";
+export const TEMPERAMENT_PASSIVE = "Passive";
+export const TEMPERAMENT_PREDATOR = "Predtor";
+export const TEMPERAMENT_PREY = "Prey";
+export const TEMPERAMENT_SEDATE = "Sedate";
+export const TEMPERAMENT_SHY = "Shy";
+export const TEMPERAMENT_SKITTISH = "Skittish";
+export const TEMPERAMENT_STALKING = "Stalking";
+export const TEMPERAMENT_SUBMISSIVE = "Submissive";
+export const TEMPERAMENT_TIMID = "Timid";
+export const TEMPERAMENT_UNCONCERNED = "Unconcerned";
+export const TEMPERAMENT_UNINTELLIGENT = "Unintelligent";
+export const TEMPERAMENT_UNPREDICTABLE = "Unpredictable";
+export const TEMPERAMENT_VISCIOUS = "Viscious";
+export const TEMPERAMENT_VIOLENT = "Violent";
+export const TEMPERAMENT_VOLATILE = "Volatile";
+
+export const DEFAULT_TEMPERAMENT = TEMPERAMENT_ACTIVE;
+export const AVAILABLE_TEMPERAMENT_LIST = [
+  TEMPERAMENT_ACTIVE,
+  TEMPERAMENT_AMBULATORY,
+  TEMPERAMENT_AGGRESIVE,
+  TEMPERAMENT_AMENABLE,
+  TEMPERAMENT_ANXIOUS,
+  TEMPERAMENT_BOLD,
+  TEMPERAMENT_CALM,
+  TEMPERAMENT_CAUTIOUS,
+  TEMPERAMENT_CRUEL,
+  TEMPERAMENT_DANGEROUS,
+  TEMPERAMENT_DEFENSIVE,
+  TEMPERAMENT_DISTINCTIVE,
+  TEMPERAMENT_DOCILE,
+  TEMPERAMENT_ERRATIC,
+  TEMPERAMENT_FEARFUL,
+  TEMPERAMENT_HIBERNATOR,
+  TEMPERAMENT_HOSTILE,
+  TEMPERAMENT_HUNTER,
+  TEMPERAMENT_MIGRATORY,
+  TEMPERAMENT_PASSIVE,
+  TEMPERAMENT_PREDATOR,
+  TEMPERAMENT_PREY,
+  TEMPERAMENT_SEDATE,
+  TEMPERAMENT_SHY,
+  TEMPERAMENT_SKITTISH,
+  TEMPERAMENT_STALKING,
+  TEMPERAMENT_SUBMISSIVE,
+  TEMPERAMENT_TIMID,
+  TEMPERAMENT_UNCONCERNED,
+  TEMPERAMENT_UNINTELLIGENT,
+  TEMPERAMENT_UNPREDICTABLE,
+  TEMPERAMENT_VISCIOUS,
+  TEMPERAMENT_VIOLENT,
+  TEMPERAMENT_VOLATILE
+];
