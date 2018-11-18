@@ -100,8 +100,14 @@ const appendToPortmanteau = curry(
   }
 );
 
+const appendTrimmedWord = (wordList, word) => [
+  ...wordList,
+  ...split(word, /\s/g)
+];
+
 export const generatePortmanteauList = wordList => {
-  const wordListPrepared = map(wordList, toLower);
+  const wordListSplit = reduce(wordList, appendTrimmedWord, []);
+  const wordListPrepared = map(wordListSplit, toLower);
   const breakpointLists = map(wordListPrepared, findValidBreakpointLists);
   const wordPartLists = generateWordPartLists(breakpointLists);
   const wordPartCombinationList = generateCombinationList(wordPartLists);

@@ -61,10 +61,9 @@ export const generateSystemNameShort = (
 ) => {
   const { starClass, starTemperature } = parseSpectralClass(spectralClass);
 
-  const trimmedRegionName = replace(regionName, /\s/g, "");
   const classMappedTo = get(spectralClassMap, [starClass, starTemperature]);
   const nameShort = generatePortmanteau(
-    [trimmedRegionName, classMappedTo],
+    [regionName, classMappedTo],
     distanceFromCenter
   );
 
