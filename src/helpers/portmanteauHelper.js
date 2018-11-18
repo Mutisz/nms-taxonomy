@@ -106,9 +106,16 @@ const appendTrimmedWord = (wordList, word) => [
 ];
 
 export const generatePortmanteauList = wordList => {
-  const wordListSplit = reduce(wordList, appendTrimmedWord, []);
-  const wordListPrepared = map(wordListSplit, toLower);
-  const breakpointLists = map(wordListPrepared, findValidBreakpointLists);
+  const wordListPrepared = map(
+    reduce(wordList, appendTrimmedWord, []),
+    toLower
+  );
+
+  const breakpointLists = map(
+    map(wordListPrepared, findValidBreakpointLists),
+    breakpointList => (breakpointList.length === 0 ? [1] : breakpointList)
+  );
+
   const wordPartLists = generateWordPartLists(breakpointLists);
   const wordPartCombinationList = generateCombinationList(wordPartLists);
   const portmanteauList = map(wordPartCombinationList, wordPartCombination =>
