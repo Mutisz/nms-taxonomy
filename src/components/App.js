@@ -15,7 +15,15 @@ const App = () => (
         </Col>
         <Col md={12}>
           <h6>
-            Based on{" "}
+            Created by{" "}
+            <a
+              href="https://github.com/Mutisz"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Mutisz
+            </a>
+            , based on{" "}
             <a
               href="https://www.odingaming.com/2018/01/15/no-mans-sky-naming-convention/"
               rel="noopener noreferrer"
