@@ -8,42 +8,6 @@ import {
   BIOME_TOXIC,
   BIOME_IRRADIATED
 } from "./biomes";
-import {
-  TEMPERAMENT_ACTIVE,
-  TEMPERAMENT_AMBULATORY,
-  TEMPERAMENT_AGGRESIVE,
-  TEMPERAMENT_AMENABLE,
-  TEMPERAMENT_ANXIOUS,
-  TEMPERAMENT_BOLD,
-  TEMPERAMENT_CALM,
-  TEMPERAMENT_CAUTIOUS,
-  TEMPERAMENT_CRUEL,
-  TEMPERAMENT_DANGEROUS,
-  TEMPERAMENT_DEFENSIVE,
-  TEMPERAMENT_DISTINCTIVE,
-  TEMPERAMENT_DOCILE,
-  TEMPERAMENT_ERRATIC,
-  TEMPERAMENT_FEARFUL,
-  TEMPERAMENT_HIBERNATOR,
-  TEMPERAMENT_HOSTILE,
-  TEMPERAMENT_HUNTER,
-  TEMPERAMENT_MIGRATORY,
-  TEMPERAMENT_PASSIVE,
-  TEMPERAMENT_PREDATOR,
-  TEMPERAMENT_PREY,
-  TEMPERAMENT_SEDATE,
-  TEMPERAMENT_SHY,
-  TEMPERAMENT_SKITTISH,
-  TEMPERAMENT_STALKING,
-  TEMPERAMENT_SUBMISSIVE,
-  TEMPERAMENT_TIMID,
-  TEMPERAMENT_UNCONCERNED,
-  TEMPERAMENT_UNINTELLIGENT,
-  TEMPERAMENT_UNPREDICTABLE,
-  TEMPERAMENT_VISCIOUS,
-  TEMPERAMENT_VIOLENT,
-  TEMPERAMENT_VOLATILE
-} from "./fauna";
 
 const spectralClassMap = {
   O: {
@@ -232,42 +196,42 @@ const floraMap = {
   6: "rikur"
 };
 
-const temperamentMap = {
-  [TEMPERAMENT_ACTIVE]: "ull",
-  [TEMPERAMENT_AMBULATORY]: "freyja",
-  [TEMPERAMENT_AGGRESIVE]: "mani",
-  [TEMPERAMENT_AMENABLE]: "saga",
-  [TEMPERAMENT_ANXIOUS]: "mimir",
-  [TEMPERAMENT_BOLD]: "meili",
-  [TEMPERAMENT_CALM]: "bil",
-  [TEMPERAMENT_CAUTIOUS]: "sol",
-  [TEMPERAMENT_CRUEL]: "fulla",
-  [TEMPERAMENT_DANGEROUS]: "hretha",
-  [TEMPERAMENT_DEFENSIVE]: "eir",
-  [TEMPERAMENT_DISTINCTIVE]: "magni",
-  [TEMPERAMENT_DOCILE]: "irpa",
-  [TEMPERAMENT_ERRATIC]: "lofn",
-  [TEMPERAMENT_FEARFUL]: "narvi",
-  [TEMPERAMENT_HIBERNATOR]: "idun",
-  [TEMPERAMENT_HOSTILE]: "zisa",
-  [TEMPERAMENT_HUNTER]: "odin",
-  [TEMPERAMENT_MIGRATORY]: "rig",
-  [TEMPERAMENT_PASSIVE]: "day",
-  [TEMPERAMENT_PREDATOR]: "vor",
-  [TEMPERAMENT_PREY]: "var",
-  [TEMPERAMENT_SEDATE]: "saxnot",
-  [TEMPERAMENT_SHY]: "hod",
-  [TEMPERAMENT_SKITTISH]: "freyr",
-  [TEMPERAMENT_STALKING]: "thor",
-  [TEMPERAMENT_SUBMISSIVE]: "od",
-  [TEMPERAMENT_TIMID]: "balder",
-  [TEMPERAMENT_UNCONCERNED]: "syn",
-  [TEMPERAMENT_UNINTELLIGENT]: "dellingr",
-  [TEMPERAMENT_UNPREDICTABLE]: "loki",
-  [TEMPERAMENT_VISCIOUS]: "hel",
-  [TEMPERAMENT_VIOLENT]: "rindr",
-  [TEMPERAMENT_VOLATILE]: "aegir"
-};
+const behaviourOptionList = [
+  "ull",
+  "freyja",
+  "mani",
+  "saga",
+  "mimir",
+  "meili",
+  "bil",
+  "sol",
+  "fulla",
+  "hretha",
+  "eir",
+  "magni",
+  "irpa",
+  "lofn",
+  "narvi",
+  "idun",
+  "zisa",
+  "odin",
+  "rig",
+  "day",
+  "vor",
+  "var",
+  "saxnot",
+  "hod",
+  "freyr",
+  "thor",
+  "od",
+  "balder",
+  "syn",
+  "dellingr",
+  "loki",
+  "hel",
+  "rindr",
+  "aegir"
+];
 
 export const TAXONOMY_ID = "Odin";
 
@@ -278,5 +242,5 @@ export default {
   sentinelMap,
   faunaMap,
   floraMap,
-  temperamentMap
+  behaviourOptionList
 };

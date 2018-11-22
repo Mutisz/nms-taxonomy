@@ -33,7 +33,7 @@ const FAUNA_DETAILS_QUERY = gql`
     }
     faunaDetails @client {
       genus
-      temperament
+      behaviour
     }
   }
 `;
@@ -60,7 +60,7 @@ const renderPanel = (
   const isValid =
     validateSystemDetails(taxonomy, systemDetails) &&
     validatePlanetDetails(taxonomy, planetDetails) &&
-    validateFaunaDetails(taxonomy, faunaDetails);
+    validateFaunaDetails(faunaDetails);
   return (
     <Panel bsStyle={isValid ? "success" : "warning"}>
       <Panel.Heading>Fauna</Panel.Heading>

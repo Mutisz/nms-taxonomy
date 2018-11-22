@@ -1,25 +1,27 @@
 import { get, map, upperFirst, join, indexOf } from "lodash";
+import random from "random-seed";
 import { generatePlanetNameShort } from "./planetDetailsHelper";
 
 import { AVAILABLE_GENUS_LIST } from "../taxonomies/fauna";
 
-export const validateFaunaDetails = (
-  { temperamentMap },
-  { genus, temperament }
-) => {
-  const isGenusAvailable = indexOf(AVAILABLE_GENUS_LIST, genus) >= 0;
-  const isTemperamentMapped = get(temperamentMap, temperament, null) !== null;
+export const validateFaunaDetails = ({ genus, behaviour }) => {
+  const validGenus = validateGenus(genus);
+  const validBehaviour = validateBehaviour(behaviour);
 
-  return isGenusAvailable && isTemperamentMapped;
+  return validGenus && validBehaviour;
 };
+
+export const validateGenus = genus => indexOf(AVAILABLE_GENUS_LIST, genus) >= 0;
+
+export const validateBehaviour = behaviour => behaviour.length > 2;
 
 export const generateFaunaName = (
   taxonomy,
   systemDetails,
   planetDetails,
-  { genus, temperament }
+  { genus, behaviour }
 ) => {
-  const { temperamentMap } = taxonomy;
+  const { behaviourOptionList } = taxonomy;
 
   const planetName = generatePlanetNameShort(
     taxonomy,
@@ -27,7 +29,12 @@ export const generateFaunaName = (
     planetDetails
   );
 
-  const temperamentName = get(temperamentMap, temperament);
+  const randomGenerator = random.create(behaviour);
+  const behaviourOptionIndex = randomGenerator.range(
+    behaviourOptionList.length
+  );
 
-  return join(map([planetName, genus, temperamentName], upperFirst), "-");
+  const behaviourName = get(behaviourOptionList, behaviourOptionIndex);
+
+  return join(map([planetName, genus, behaviourName], upperFirst), "-");
 };

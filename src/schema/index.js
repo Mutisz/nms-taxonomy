@@ -1,5 +1,5 @@
 import { DEFAULT_TAXONOMY_ID } from "../taxonomies";
-import { DEFAULT_GENUS, DEFAULT_TEMPERAMENT } from "../taxonomies/fauna";
+import { DEFAULT_GENUS } from "../taxonomies/fauna";
 
 export const defaults = {
   preferences: {
@@ -23,7 +23,7 @@ export const defaults = {
   faunaDetails: {
     __typename: "FaunaDetails",
     genus: DEFAULT_GENUS,
-    temperament: DEFAULT_TEMPERAMENT
+    behaviour: ""
   },
   floraDetails: {
     __typename: "FloraDetails",
@@ -56,7 +56,7 @@ export const typeDefs = `
 
   type FaunaDetails {
     genus: String
-    temperament: String
+    behaviour: String
   }
 
   type FloraDetails {

@@ -8,42 +8,6 @@ import {
   BIOME_TOXIC,
   BIOME_IRRADIATED
 } from "./biomes";
-import {
-  TEMPERAMENT_ACTIVE,
-  TEMPERAMENT_AMBULATORY,
-  TEMPERAMENT_AGGRESIVE,
-  TEMPERAMENT_AMENABLE,
-  TEMPERAMENT_ANXIOUS,
-  TEMPERAMENT_BOLD,
-  TEMPERAMENT_CALM,
-  TEMPERAMENT_CAUTIOUS,
-  TEMPERAMENT_CRUEL,
-  TEMPERAMENT_DANGEROUS,
-  TEMPERAMENT_DEFENSIVE,
-  TEMPERAMENT_DISTINCTIVE,
-  TEMPERAMENT_DOCILE,
-  TEMPERAMENT_ERRATIC,
-  TEMPERAMENT_FEARFUL,
-  TEMPERAMENT_HIBERNATOR,
-  TEMPERAMENT_HOSTILE,
-  TEMPERAMENT_HUNTER,
-  TEMPERAMENT_MIGRATORY,
-  TEMPERAMENT_PASSIVE,
-  TEMPERAMENT_PREDATOR,
-  TEMPERAMENT_PREY,
-  TEMPERAMENT_SEDATE,
-  TEMPERAMENT_SHY,
-  TEMPERAMENT_SKITTISH,
-  TEMPERAMENT_STALKING,
-  TEMPERAMENT_SUBMISSIVE,
-  TEMPERAMENT_TIMID,
-  TEMPERAMENT_UNCONCERNED,
-  TEMPERAMENT_UNINTELLIGENT,
-  TEMPERAMENT_UNPREDICTABLE,
-  TEMPERAMENT_VISCIOUS,
-  TEMPERAMENT_VIOLENT,
-  TEMPERAMENT_VOLATILE
-} from "./fauna";
 
 // Using Great Old Ones (mostly alphabetically)
 const spectralClassMap = {
@@ -238,43 +202,43 @@ const floraMap = {
   6: "llawn" // Full
 };
 
-// Using Outer Gods (mostly at random)
-const temperamentMap = {
-  [TEMPERAMENT_ACTIVE]: "Abhoth",
-  [TEMPERAMENT_AMBULATORY]: "Aletheia",
-  [TEMPERAMENT_AGGRESIVE]: "C'thalpa",
-  [TEMPERAMENT_AMENABLE]: "Azhorra-Tha",
-  [TEMPERAMENT_ANXIOUS]: "Cxaxukluth",
-  [TEMPERAMENT_BOLD]: "Daoloth",
-  [TEMPERAMENT_CALM]: "Darkness",
-  [TEMPERAMENT_CAUTIOUS]: "D’endrrah",
-  [TEMPERAMENT_CRUEL]: "Ghroth",
-  [TEMPERAMENT_DANGEROUS]: "Hydra",
-  [TEMPERAMENT_DEFENSIVE]: "Ialdagorth",
-  [TEMPERAMENT_DISTINCTIVE]: "Kaajh'Kaalbh",
-  [TEMPERAMENT_DOCILE]: "Lu Kthu",
-  [TEMPERAMENT_ERRATIC]: "Mh'ithrha",
-  [TEMPERAMENT_FEARFUL]: "Mlandoth",
-  [TEMPERAMENT_HIBERNATOR]: "Ngyr Korath",
-  [TEMPERAMENT_HOSTILE]: "Nyarlathotep",
-  [TEMPERAMENT_HUNTER]: "Aiueb Gnshal",
-  [TEMPERAMENT_MIGRATORY]: "Nyctelios",
-  [TEMPERAMENT_PASSIVE]: "Ny Rakath",
-  [TEMPERAMENT_PREDATOR]: "Shabbith Ka",
-  [TEMPERAMENT_PREY]: "Shub Niggurath",
-  [TEMPERAMENT_SEDATE]: "Suc'Naath",
-  [TEMPERAMENT_SHY]: "Tru'nembra",
-  [TEMPERAMENT_SKITTISH]: "Tulzscha",
-  [TEMPERAMENT_STALKING]: "Ubbo Sathla",
-  [TEMPERAMENT_SUBMISSIVE]: "Uvhash",
-  [TEMPERAMENT_TIMID]: "Xa'ligha",
-  [TEMPERAMENT_UNCONCERNED]: "Azathoth",
-  [TEMPERAMENT_UNINTELLIGENT]: "Xexanoth",
-  [TEMPERAMENT_UNPREDICTABLE]: "Yhoundeh",
-  [TEMPERAMENT_VISCIOUS]: "Yibb Tstll",
-  [TEMPERAMENT_VIOLENT]: "Yidhra",
-  [TEMPERAMENT_VOLATILE]: "Yog Sothoth"
-};
+// Using Outer Gods
+const behaviourOptionList = [
+  "Abhoth",
+  "Aletheia",
+  "C'thalpa",
+  "Azhorra-Tha",
+  "Cxaxukluth",
+  "Daoloth",
+  "Darkness",
+  "D’endrrah",
+  "Ghroth",
+  "Hydra",
+  "Ialdagorth",
+  "Kaajh'Kaalbh",
+  "Lu Kthu",
+  "Mh'ithrha",
+  "Mlandoth",
+  "Ngyr Korath",
+  "Nyarlathotep",
+  "Aiueb Gnshal",
+  "Nyctelios",
+  "Ny Rakath",
+  "Shabbith Ka",
+  "Shub Niggurath",
+  "Suc'Naath",
+  "Tru'nembra",
+  "Tulzscha",
+  "Ubbo Sathla",
+  "Uvhash",
+  "Xa'ligha",
+  "Azathoth",
+  "Xexanoth",
+  "Yhoundeh",
+  "Yibb Tstll",
+  "Yidhra",
+  "Yog Sothoth"
+];
 
 export const TAXONOMY_ID = "Antediluvian";
 
@@ -285,5 +249,5 @@ export default {
   sentinelMap,
   faunaMap,
   floraMap,
-  temperamentMap
+  behaviourOptionList
 };
