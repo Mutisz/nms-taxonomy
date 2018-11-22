@@ -30,7 +30,8 @@ const renderApp = () => {
 
 persistCache({
   cache: cache,
-  storage: storage
+  storage: storage,
+  key: "nms-taxonomy-v1"
 })
   .then(renderApp)
   .catch(error => console.error(error));

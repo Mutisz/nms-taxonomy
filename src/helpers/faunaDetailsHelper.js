@@ -1,6 +1,7 @@
 import { get, map, upperFirst, join, indexOf } from "lodash";
 import random from "random-seed";
 import { generatePlanetNameShort } from "./planetDetailsHelper";
+import { generatePortmanteau } from "./portmanteauHelper";
 
 import { AVAILABLE_GENUS_LIST } from "../taxonomies/fauna";
 
@@ -22,6 +23,7 @@ export const generateFaunaName = (
   { genus, behaviour }
 ) => {
   const { behaviourOptionList } = taxonomy;
+  const { distanceFromCenter } = systemDetails;
 
   const planetName = generatePlanetNameShort(
     taxonomy,
@@ -34,7 +36,10 @@ export const generateFaunaName = (
     behaviourOptionList.length
   );
 
-  const behaviourName = get(behaviourOptionList, behaviourOptionIndex);
+  const behaviourName = generatePortmanteau(
+    [genus, get(behaviourOptionList, behaviourOptionIndex)],
+    distanceFromCenter
+  );
 
-  return join(map([planetName, genus, behaviourName], upperFirst), "-");
+  return join(map([planetName, behaviourName], upperFirst), " ");
 };

@@ -14,7 +14,7 @@ export const defaults = {
   },
   planetDetails: {
     __typename: "PlanetDetails",
-    biome: "Lush",
+    weather: "",
     sentinels: 1,
     fauna: 1,
     flora: 1,
@@ -47,7 +47,7 @@ export const typeDefs = `
   }
 
   type PlanetDetails {
-    biome: String!
+    weather: String!
     sentinels: Int!
     fauna: Int!
     flora: Int!

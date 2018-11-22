@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 
-import { Col, Form, FormGroup, ControlLabel, Checkbox } from "react-bootstrap";
+import {
+  Col,
+  Form,
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  Checkbox
+} from "react-bootstrap";
 import SelectInput from "../Input/SelectInput";
 
 import { curry } from "lodash";
-import BIOMES from "../../taxonomies/biomes";
 
 const handleFieldChange = curry((update, field, e) =>
   update({
@@ -20,17 +26,23 @@ const handleCheckboxChange = curry((update, field, e) =>
 
 class PlanetDetailsForm extends Component {
   render() {
-    const { update, biome, sentinels, fauna, flora, isMoon } = this.props;
+    const { update, weather, sentinels, fauna, flora, isMoon } = this.props;
     const levels = [1, 2, 3, 4, 5, 6];
     return (
       <Form horizontal>
-        <SelectInput
-          controlId="biome"
-          label="Biome"
-          options={BIOMES}
-          value={biome}
-          onChange={handleFieldChange(update, "biome")}
-        />
+        <FormGroup controlId="behaviour">
+          <Col componentClass={ControlLabel} xs={4}>
+            Weather
+          </Col>
+          <Col xs={8}>
+            <FormControl
+              type="text"
+              value={weather}
+              placeholder="ex. Stormy"
+              onChange={handleFieldChange(update, "weather")}
+            />
+          </Col>
+        </FormGroup>
         <SelectInput
           controlId="sentinels"
           label="Sentinels"

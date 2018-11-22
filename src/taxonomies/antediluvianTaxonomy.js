@@ -1,13 +1,4 @@
-import {
-  BIOME_LUSH,
-  BIOME_BARREN,
-  BIOME_AIRLESS,
-  BIOME_EXOTIC,
-  BIOME_SCORCHED,
-  BIOME_FROZEN,
-  BIOME_TOXIC,
-  BIOME_IRRADIATED
-} from "./biomes";
+// SYSTEM NAME PARTS
 
 // Using Great Old Ones (mostly alphabetically)
 const spectralClassMap = {
@@ -160,17 +151,21 @@ const odditiesMap = {
   w: "uw"
 };
 
-// Using R'Lyehian translations
-const biomeMap = {
-  [BIOME_LUSH]: "ehyeeog", // Many
-  [BIOME_BARREN]: "ahyog'nglui", // Empty
-  [BIOME_AIRLESS]: "soth", // Void
-  [BIOME_EXOTIC]: "r'luh", // Magic
-  [BIOME_SCORCHED]: "fm'latgh", // Burn
-  [BIOME_FROZEN]: "mgfm'latghnah", // Cold
-  [BIOME_TOXIC]: "n'ghanglui", // Disease
-  [BIOME_IRRADIATED]: "zhro shuggog" // End of the World
-};
+// PLANET NAME PARTS
+
+// Using location names
+const weatherOptionList = [
+  "R'lyeh",
+  "Celephais",
+  "Dylath Leen",
+  "Serannian",
+  "Oriab",
+  "Ulthar",
+  "Miskatonic",
+  "Arkham",
+  "Innsmouth",
+  "Yuggoth"
+];
 
 // Using R'Lyehian translations
 const sentinelMap = {
@@ -201,6 +196,8 @@ const floraMap = {
   5: "cyfoethog", // Rich
   6: "llawn" // Full
 };
+
+// FAUNA NAME PARTS
 
 // Using Outer Gods
 const behaviourOptionList = [
@@ -245,7 +242,7 @@ export const TAXONOMY_ID = "Antediluvian";
 export default {
   spectralClassMap,
   odditiesMap,
-  biomeMap,
+  weatherOptionList,
   sentinelMap,
   faunaMap,
   floraMap,

@@ -1,27 +1,37 @@
 import { get, map, upperFirst, join } from "lodash";
+import random from "random-seed";
 import { generateSystemNameShort } from "./systemDetailsHelper";
 import { generatePortmanteau } from "./portmanteauHelper";
 
 export const validatePlanetDetails = (
-  { biomeMap, sentinelMap, faunaMap, floraMap },
-  { biome, sentinels, fauna, flora }
+  { sentinelMap, faunaMap, floraMap },
+  { weather, sentinels, fauna, flora }
 ) => {
-  const isBiomeMapped = get(biomeMap, biome, null) !== null;
+  const validWeather = validateWeather(weather);
   const isSentinelsMapped = get(sentinelMap, sentinels, null) !== null;
   const isFaunaMapped = get(faunaMap, fauna, null) !== null;
   const isFloraMapped = get(floraMap, flora, null) !== null;
 
-  return isBiomeMapped && isSentinelsMapped && isFaunaMapped && isFloraMapped;
+  return validWeather && isSentinelsMapped && isFaunaMapped && isFloraMapped;
 };
 
-export const generatePlanetNameShort = (taxonomy, systemDetails, { biome }) => {
-  const { biomeMap } = taxonomy;
+export const validateWeather = weather => weather.length > 2;
+
+export const generatePlanetNameShort = (
+  taxonomy,
+  systemDetails,
+  { weather }
+) => {
+  const { weatherOptionList } = taxonomy;
   const { distanceFromCenter } = systemDetails;
 
+  const randomGenerator = random.create(weather);
+  const weatherOptionIndex = randomGenerator.range(weatherOptionList.length);
+
   const systemName = generateSystemNameShort(taxonomy, systemDetails);
-  const biomeName = get(biomeMap, biome);
+  const weatherName = get(weatherOptionList, weatherOptionIndex);
   const nameShort = generatePortmanteau(
-    [systemName, biomeName],
+    [systemName, weatherName],
     distanceFromCenter
   );
 
@@ -33,21 +43,19 @@ export const generatePlanetName = (taxonomy, systemDetails, planetDetails) => {
   const { distanceFromCenter } = systemDetails;
   const { sentinels, fauna, flora, isMoon } = planetDetails;
 
-  const nameShort = generatePlanetNameShort(
+  const planetNameShort = generatePlanetNameShort(
     taxonomy,
     systemDetails,
     planetDetails
   );
 
-  const planetNameOtherPart = generatePortmanteau(
+  const planetNameOther = generatePortmanteau(
     [get(sentinelMap, sentinels), get(faunaMap, fauna), get(floraMap, flora)],
     distanceFromCenter
   );
 
-  const isMoonNamePart = isMoon ? ["M"] : [];
+  const moonName = isMoon ? ["M"] : [];
+  const planetAndMoonName = join([planetNameOther, ...moonName], "-");
 
-  return join(
-    map([nameShort, planetNameOtherPart, ...isMoonNamePart], upperFirst),
-    "-"
-  );
+  return join(map([planetNameShort, planetAndMoonName], upperFirst), " ");
 };

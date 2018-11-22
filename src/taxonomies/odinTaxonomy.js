@@ -1,13 +1,4 @@
-import {
-  BIOME_LUSH,
-  BIOME_BARREN,
-  BIOME_AIRLESS,
-  BIOME_EXOTIC,
-  BIOME_SCORCHED,
-  BIOME_FROZEN,
-  BIOME_TOXIC,
-  BIOME_IRRADIATED
-} from "./biomes";
+// SYSTEM NAME PARTS
 
 const spectralClassMap = {
   O: {
@@ -158,16 +149,18 @@ const odditiesMap = {
   w: "uw"
 };
 
-const biomeMap = {
-  [BIOME_LUSH]: "himnariki",
-  [BIOME_BARREN]: "proskadur",
-  [BIOME_AIRLESS]: "yfirgefinn",
-  [BIOME_EXOTIC]: "framandi",
-  [BIOME_SCORCHED]: "brenndu",
-  [BIOME_FROZEN]: "fryst",
-  [BIOME_TOXIC]: "eiturefni",
-  [BIOME_IRRADIATED]: "geislad"
-};
+// PLANET NAME PARTS
+
+const weatherOptionList = [
+  "himnariki",
+  "proskadur",
+  "yfirgefinn",
+  "framandi",
+  "brenndu",
+  "fryst",
+  "eiturefni",
+  "geislad"
+];
 
 const sentinelMap = {
   1: "hlutlaus",
@@ -195,6 +188,8 @@ const floraMap = {
   5: "orlatur",
   6: "rikur"
 };
+
+// FAUNA NAME PARTS
 
 const behaviourOptionList = [
   "ull",
@@ -238,7 +233,7 @@ export const TAXONOMY_ID = "Odin";
 export default {
   spectralClassMap,
   odditiesMap,
-  biomeMap,
+  weatherOptionList,
   sentinelMap,
   faunaMap,
   floraMap,

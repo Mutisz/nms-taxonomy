@@ -25,7 +25,7 @@ const FAUNA_DETAILS_QUERY = gql`
       distanceFromCenter
     }
     planetDetails @client {
-      biome
+      weather
       sentinels
       fauna
       flora
