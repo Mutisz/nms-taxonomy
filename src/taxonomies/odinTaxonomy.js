@@ -128,8 +128,8 @@ const spectralClassMap = {
     3: "Matangi",
     4: "Demeter",
     5: "Demeter",
-    6: "Ce-aehd",
-    7: "Ce-aehd",
+    6: "Ce aehd",
+    7: "Ce aehd",
     8: "Sif",
     9: "Sif"
   }

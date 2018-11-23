@@ -204,7 +204,7 @@ const behaviourOptionList = [
   "Abhoth",
   "Aletheia",
   "C'thalpa",
-  "Azhorra-Tha",
+  "Azhorra Tha",
   "Cxaxukluth",
   "Daoloth",
   "Darkness",
