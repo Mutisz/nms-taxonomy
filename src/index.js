@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+import { register as registerServiceWorker } from "./serviceWorker";
 
 import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -30,6 +31,8 @@ const renderApp = () => {
     </ApolloProvider>,
     document.getElementById("root")
   );
+
+  registerServiceWorker();
 };
 
 persistCache({
