@@ -4,23 +4,23 @@ This is a small app for generating names for various types of stuff in No Man's 
 
 Odin's convention uses series of custom names that are mapped to characteristics of named objects in the game, for example system with spectral class of F3 will be mapped to a name of the Indian deity, Krishna. By default this app will use the same mappings, but this can be changed to a different list of names using the "Taxonomy" setting. New sets of names can also be easily added in the code.
 
-## Current taxonomy options
+### Current taxonomy options
 - Odin (closely matches names described on the blog)
 - Antediluvian (my own set of names based on Cthulhu mythos, produces some weird sounding but cool names)
 
-# Run the app
+## Run the app
 
 You can use the app on [this GitHub page](https://mutisz.github.io/nms-taxonomy/).
 
-# Run the app locally
+## Run the app locally
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -28,12 +28,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -43,7 +43,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -53,7 +53,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
