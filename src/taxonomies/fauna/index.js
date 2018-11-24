@@ -30,6 +30,7 @@ export const GENUS_CYCROMYS = "Cycroms";
 export const GENUS_RHOPALOCERA = "Rhopalocera";
 
 export const DEFAULT_GENUS = GENUS_FELIDAE;
+
 export const AVAILABLE_GENUS_LIST = [
   GENUS_TETRACERIS,
   GENUS_REOCOCCYX,
@@ -55,3 +56,29 @@ export const AVAILABLE_GENUS_LIST = [
   GENUS_CYCROMYS,
   GENUS_RHOPALOCERA
 ];
+
+export const AVAILABLE_GENUS_DESCRIPTION_LIST = {
+  [GENUS_TETRACERIS]: "Antelopes",
+  [GENUS_REOCOCCYX]: "Bipedal antelopes",
+  [GENUS_RAGNIFAE]: "Diplos (long necked dinosaurs)",
+  [GENUS_THEROMA]: "Triceratops (rhinos or hippos)",
+  [GENUS_PROCAVYA]: "Rodents",
+  [GENUS_CONOKINIS]: "Beetles (very similar to Bos)",
+  [GENUS_UNGULATIS]: "Cows",
+  [GENUS_HEXUNGULATIS]: "Hexapodal cows",
+  [GENUS_FELIDAE]: "Cats and dogs (both bipedal and quadrupedal)",
+  [GENUS_FELIHEX]: "Hexapodal cats and dogs",
+  [GENUS_ANASTOMUS]: "Striders (bipedal, unarmed creatures)",
+  [GENUS_TYRANOCAE]: "Dinosaurs (like T-Rex)",
+  [GENUS_MOGARA]: "Grunts (bipedal creatures similar to Gek)",
+  [GENUS_LOK]: "Blobs",
+  [GENUS_BOS]: "Spiders (very similar to Conokinis)",
+  [GENUS_ICTALORIS]: "Fish",
+  [GENUS_PRIONACE]: "Sharks",
+  [GENUS_PRIONACEFDA]: "Swimming cows",
+  [GENUS_UNKNOWN]: "Swimming rodents",
+  [GENUS_AGNELIS]: "Birds",
+  [GENUS_OXYACTA]: "Wraiths (flying snakes)",
+  [GENUS_CYCROMYS]: "Flying lizards",
+  [GENUS_RHOPALOCERA]: "Butterflies"
+};

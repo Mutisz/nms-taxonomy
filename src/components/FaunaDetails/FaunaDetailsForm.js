@@ -5,12 +5,36 @@ import {
   Form,
   FormGroup,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Popover
 } from "react-bootstrap";
 import SelectInput from "../Input/SelectInput";
 
-import { curry } from "lodash";
-import { AVAILABLE_GENUS_LIST } from "../../taxonomies/fauna";
+import { curry, map, get } from "lodash";
+
+import {
+  AVAILABLE_GENUS_LIST,
+  AVAILABLE_GENUS_DESCRIPTION_LIST
+} from "../../taxonomies/fauna";
+
+const genusPopover = (
+  <Popover id="generaDescription" title="Genera descriptions">
+    <ul>
+      {map(AVAILABLE_GENUS_LIST, genus => {
+        const description = get(AVAILABLE_GENUS_DESCRIPTION_LIST, genus, null);
+        const label = genus + (description ? ` - ${description}` : "");
+        const link = `https://nomanssky.gamepedia.com/${genus}`;
+        return (
+          <li key={genus}>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </Popover>
+);
 
 const handleFieldChange = curry((update, field, e) =>
   update({
@@ -26,7 +50,9 @@ const FaunaDetailsForm = ({ update, genus, behaviour }) => (
       options={AVAILABLE_GENUS_LIST}
       value={genus}
       onChange={handleFieldChange(update, "genus")}
+      tooltip={genusPopover}
     />
+
     <FormGroup controlId="behaviour">
       <Col componentClass={ControlLabel} xs={4}>
         Behaviour
