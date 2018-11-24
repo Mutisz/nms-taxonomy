@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/nms-taxonomy/precache-manifest.438fc6e7f41c855bb5ee2de77354a346.js"
+  "/nms-taxonomy/precache-manifest.4251ebcd38ec76b50ae29ebc5ec94fc5.js"
 );
 
 workbox.clientsClaim();
