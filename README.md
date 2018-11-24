@@ -1,3 +1,19 @@
+# No Man's Sky Taxonomy
+
+This is a small app for generating names for various types of stuff in No Man's Sky. It follows [Odin's Convention](https://www.odingaming.com/2018/01/15/no-mans-sky-naming-convention/) with several modifications, some of which where necessary to build this app and some were just a personal preference. 
+
+Odin's convention uses series of custom names that are mapped to characteristics of named objects in the game, for example system with spectral class of F3 will be mapped to a name of the Indian deity, Krishna. By default this app will use the same mappings, but this can be changed to a different list of names using the "Taxonomy" setting. New sets of names can also be easily added in the code.
+
+## Current taxonomy options
+- Odin (closely matches names described on the blog)
+- Antediluvian (my own set of names based on Cthulhu mythos, produces some weird sounding but cool names)
+
+# Run the app
+
+You can use the app on [this GitHub page](https://mutisz.github.io/nms-taxonomy/).
+
+# Run the app locally
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
