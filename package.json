@@ -1,7 +1,7 @@
 {
   "name": "nms-taxonomy",
   "version": "1.0.0",
-  "description": "Name generator for No Man's Sky",
+  "description": "No Man's Sky name generator",
   "author": "Coral Software Mateusz Tokarski",
   "license": "GPL-3.0",
   "main": "src/index.js",
