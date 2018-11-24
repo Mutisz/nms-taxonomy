@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import {
   Col,
@@ -17,60 +17,55 @@ const handleFieldChange = curry((update, field, e) =>
   })
 );
 
-class SystemDetailsForm extends Component {
-  render() {
-    const {
-      update,
-      regionName,
-      spectralClass,
-      distanceFromCenter
-    } = this.props;
-    return (
-      <Form horizontal>
-        <FormGroup controlId="regionName">
-          <Col componentClass={ControlLabel} xs={3}>
-            Region name
-          </Col>
-          <Col xs={9}>
-            <FormControl
-              type="text"
-              value={regionName}
-              placeholder="ex. Toswati Instability"
-              onChange={handleFieldChange(update, "regionName")}
-            />
-          </Col>
-        </FormGroup>
-        <FormGroup controlId="spectralClass">
-          <Col componentClass={ControlLabel} xs={3}>
-            Spectral class
-          </Col>
-          <Col xs={9}>
-            <FormControl
-              type="text"
-              value={spectralClass}
-              placeholder="ex. F5p"
-              onChange={handleFieldChange(update, "spectralClass")}
-            />
-          </Col>
-        </FormGroup>
-        <FormGroup controlId="distanceFromCenter">
-          <Col componentClass={ControlLabel} xs={3}>
-            Distance
-          </Col>
-          <Col xs={9}>
-            <InputGroup>
-              <InputGroup.Addon>ly</InputGroup.Addon>
-              <FormControl
-                type="text"
-                value={distanceFromCenter}
-                onChange={handleFieldChange(update, "distanceFromCenter")}
-              />
-            </InputGroup>
-          </Col>
-        </FormGroup>
-      </Form>
-    );
-  }
-}
+const SystemDetailsForm = ({
+  update,
+  regionName,
+  spectralClass,
+  distanceFromCenter
+}) => (
+  <Form horizontal>
+    <FormGroup controlId="regionName">
+      <Col componentClass={ControlLabel} xs={3}>
+        Region name
+      </Col>
+      <Col xs={9}>
+        <FormControl
+          type="text"
+          value={regionName}
+          placeholder="ex. Toswati Instability"
+          onChange={handleFieldChange(update, "regionName")}
+        />
+      </Col>
+    </FormGroup>
+    <FormGroup controlId="spectralClass">
+      <Col componentClass={ControlLabel} xs={3}>
+        Spectral class
+      </Col>
+      <Col xs={9}>
+        <FormControl
+          type="text"
+          value={spectralClass}
+          placeholder="ex. F5p"
+          onChange={handleFieldChange(update, "spectralClass")}
+        />
+      </Col>
+    </FormGroup>
+    <FormGroup controlId="distanceFromCenter">
+      <Col componentClass={ControlLabel} xs={3}>
+        Distance
+      </Col>
+      <Col xs={9}>
+        <InputGroup>
+          <InputGroup.Addon>ly</InputGroup.Addon>
+          <FormControl
+            type="text"
+            value={distanceFromCenter}
+            onChange={handleFieldChange(update, "distanceFromCenter")}
+          />
+        </InputGroup>
+      </Col>
+    </FormGroup>
+  </Form>
+);
 
 export default SystemDetailsForm;

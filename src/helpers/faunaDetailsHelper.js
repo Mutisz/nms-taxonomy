@@ -1,35 +1,39 @@
 import { get, map, upperFirst, join, indexOf } from "lodash";
 import random from "random-seed";
-import { generatePlanetNameShort } from "./planetDetailsHelper";
+import {
+  validatePlanetDetails,
+  generatePlanetNameShort
+} from "./planetDetailsHelper";
 import { generatePortmanteau } from "./portmanteauHelper";
 
 import { AVAILABLE_GENUS_LIST } from "../taxonomies/fauna";
 
-export const validateFaunaDetails = ({ genus, behaviour }) => {
+export const validateFaunaDetails = (taxonomy, data) => {
+  const {
+    faunaDetails: { genus, behaviour }
+  } = data;
   const validGenus = validateGenus(genus);
   const validBehaviour = validateBehaviour(behaviour);
 
-  return validGenus && validBehaviour;
+  return validatePlanetDetails(taxonomy, data) && validGenus && validBehaviour;
 };
 
 export const validateGenus = genus => indexOf(AVAILABLE_GENUS_LIST, genus) >= 0;
 
 export const validateBehaviour = behaviour => behaviour.length > 2;
 
-export const generateFaunaName = (
-  taxonomy,
-  systemDetails,
-  planetDetails,
-  { genus, behaviour }
-) => {
-  const { behaviourOptionList } = taxonomy;
-  const { distanceFromCenter } = systemDetails;
+export const generateFaunaName = (taxonomy, data) => {
+  if (!validateFaunaDetails(taxonomy, data)) {
+    throw new Error("Cannot generate name with given fauna data");
+  }
 
-  const planetName = generatePlanetNameShort(
-    taxonomy,
-    systemDetails,
-    planetDetails
-  );
+  const { behaviourOptionList } = taxonomy;
+  const {
+    systemDetails: { distanceFromCenter },
+    faunaDetails: { behaviour, genus }
+  } = data;
+
+  const planetName = generatePlanetNameShort(taxonomy, data);
 
   const randomGenerator = random.create(behaviour);
   const behaviourOptionIndex = randomGenerator.range(

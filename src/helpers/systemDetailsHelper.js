@@ -19,10 +19,10 @@ const parseSpectralClass = spectralClass => {
   };
 };
 
-export const validateSystemDetails = (
-  taxonomy,
-  { regionName, spectralClass }
-) => {
+export const validateSystemDetails = (taxonomy, data) => {
+  const {
+    systemDetails: { regionName, spectralClass }
+  } = data;
   const validRegionName = validateRegionName(regionName);
   const validSpectralClass = validateSpectralClass(taxonomy, spectralClass);
 
@@ -31,10 +31,8 @@ export const validateSystemDetails = (
 
 export const validateRegionName = regionName => regionName.length > 2;
 
-export const validateSpectralClass = (
-  { spectralClassMap, odditiesMap },
-  spectralClass
-) => {
+export const validateSpectralClass = (taxonomy, spectralClass) => {
+  const { spectralClassMap, odditiesMap } = taxonomy;
   if (!SPECTRAL_CLASS_REGEXP.test(spectralClass)) {
     return false;
   }
@@ -55,30 +53,42 @@ export const validateSpectralClass = (
   return isClassValid && areOdditiesValid;
 };
 
-export const generateSystemNameShort = (
-  { spectralClassMap },
-  { regionName, spectralClass, distanceFromCenter }
-) => {
-  const { starClass, starTemperature } = parseSpectralClass(spectralClass);
+export const generateSystemNameShort = (taxonomy, data) => {
+  if (!validateSystemDetails(taxonomy, data)) {
+    throw new Error("Cannot generate name with given system data");
+  }
 
-  const classMappedTo = get(spectralClassMap, [starClass, starTemperature]);
+  const { spectralClassMap } = taxonomy;
+  const {
+    systemDetails: { regionName, spectralClass, distanceFromCenter }
+  } = data;
+
+  const { starClass, starTemperature } = parseSpectralClass(spectralClass);
+  const className = get(spectralClassMap, [starClass, starTemperature]);
   const nameShort = generatePortmanteau(
-    [regionName, classMappedTo],
+    [regionName, className],
     distanceFromCenter
   );
 
   return upperFirst(nameShort);
 };
 
-export const generateSystemName = (taxonomy, systemDetails) => {
-  const { odditiesMap } = taxonomy;
-  const { spectralClass } = systemDetails;
-  const { oddities } = parseSpectralClass(spectralClass);
+export const generateSystemName = (taxonomy, data) => {
+  if (!validateSystemDetails(taxonomy, data)) {
+    throw new Error("Cannot generate name with given system data");
+  }
 
-  const nameShort = generateSystemNameShort(taxonomy, systemDetails);
-  const oddityNameParts = map(split(oddities, ""), oddity =>
-    get(odditiesMap, oddity)
+  const { odditiesMap } = taxonomy;
+  const {
+    systemDetails: { spectralClass }
+  } = data;
+
+  const systemNameShort = generateSystemNameShort(taxonomy, data);
+
+  const { oddities } = parseSpectralClass(spectralClass);
+  const oddityAffixList = map(split(oddities, ""), oddity =>
+    get(odditiesMap, oddity, "")
   );
 
-  return join(map([nameShort, ...oddityNameParts], upperFirst), "-");
+  return join(map([systemNameShort, ...oddityAffixList], upperFirst), "-");
 };

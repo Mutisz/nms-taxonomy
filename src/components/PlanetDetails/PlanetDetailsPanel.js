@@ -1,17 +1,14 @@
 import React from "react";
 import gql from "graphql-tag";
-import { Query } from "react-apollo";
 
-import { Panel } from "react-bootstrap";
 import PlanetDetailsForm from "./PlanetDetailsForm";
 
 import { curry } from "lodash";
-import { getTaxonomy } from "../../taxonomies";
-import { validateSystemDetails } from "../../helpers/systemDetailsHelper";
 import {
-  validatePlanetDetails,
-  generatePlanetName
+  generatePlanetName,
+  validatePlanetDetails
 } from "../../helpers/planetDetailsHelper";
+import CommonDetailsPanel from "../Common/CommonDetailsPanel";
 
 const PLANET_DETAILS_QUERY = gql`
   {
@@ -44,46 +41,18 @@ const updatePlanetDetails = curry((client, value) =>
   })
 );
 
-const renderPanel = (client, { taxonomyId }, systemDetails, planetDetails) => {
-  const taxonomy = getTaxonomy(taxonomyId);
-  const isValid =
-    validateSystemDetails(taxonomy, systemDetails) &&
-    validatePlanetDetails(taxonomy, planetDetails);
-  return (
-    <Panel bsStyle={isValid ? "success" : "warning"}>
-      <Panel.Heading>Planet</Panel.Heading>
-      <Panel.Body>
-        <PlanetDetailsForm
-          {...planetDetails}
-          update={updatePlanetDetails(client)}
-        />
-      </Panel.Body>
-      <Panel.Footer>
-        {isValid
-          ? generatePlanetName(taxonomy, systemDetails, planetDetails)
-          : "Cannot generate name using supplied information"}
-      </Panel.Footer>
-    </Panel>
-  );
-};
+const renderForm = (client, { planetDetails }) => (
+  <PlanetDetailsForm {...planetDetails} update={updatePlanetDetails(client)} />
+);
 
 const PlanetDetailsPanel = () => (
-  <Query query={PLANET_DETAILS_QUERY}>
-    {({
-      data: { preferences, systemDetails, planetDetails },
-      client,
-      loading,
-      error
-    }) => {
-      if (loading) {
-        return "Loading...";
-      } else if (error) {
-        return "Error!";
-      }
-
-      return renderPanel(client, preferences, systemDetails, planetDetails);
-    }}
-  </Query>
+  <CommonDetailsPanel
+    query={PLANET_DETAILS_QUERY}
+    label="Planet"
+    renderForm={renderForm}
+    validateData={validatePlanetDetails}
+    generateName={generatePlanetName}
+  />
 );
 
 export default PlanetDetailsPanel;

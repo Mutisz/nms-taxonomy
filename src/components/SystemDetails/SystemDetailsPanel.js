@@ -1,12 +1,10 @@
 import React from "react";
 import gql from "graphql-tag";
-import { Query } from "react-apollo";
 
-import { Panel } from "react-bootstrap";
+import CommonDetailsPanel from "../Common/CommonDetailsPanel";
 import SystemDetailsForm from "./SystemDetailsForm";
 
 import { curry } from "lodash";
-import { getTaxonomy } from "../../taxonomies";
 import {
   validateSystemDetails,
   generateSystemName
@@ -36,39 +34,18 @@ const updateSystemDetails = curry((client, value) =>
   })
 );
 
-const renderPanel = (client, { taxonomyId }, systemDetails) => {
-  const taxonomy = getTaxonomy(taxonomyId);
-  const isValid = validateSystemDetails(taxonomy, systemDetails);
-  return (
-    <Panel bsStyle={isValid ? "success" : "warning"}>
-      <Panel.Heading>System</Panel.Heading>
-      <Panel.Body>
-        <SystemDetailsForm
-          {...systemDetails}
-          update={updateSystemDetails(client)}
-        />
-      </Panel.Body>
-      <Panel.Footer>
-        {isValid
-          ? generateSystemName(taxonomy, systemDetails)
-          : "Cannot generate name using supplied information"}
-      </Panel.Footer>
-    </Panel>
-  );
-};
+const renderForm = (client, { systemDetails }) => (
+  <SystemDetailsForm {...systemDetails} update={updateSystemDetails(client)} />
+);
 
 const SystemDetailsPanel = () => (
-  <Query query={SYSTEM_DETAILS_QUERY}>
-    {({ data: { preferences, systemDetails }, client, loading, error }) => {
-      if (loading) {
-        return "Loading...";
-      } else if (error) {
-        return "Error!";
-      }
-
-      return renderPanel(client, preferences, systemDetails);
-    }}
-  </Query>
+  <CommonDetailsPanel
+    query={SYSTEM_DETAILS_QUERY}
+    label="System"
+    renderForm={renderForm}
+    validateData={validateSystemDetails}
+    generateName={generateSystemName}
+  />
 );
 
 export default SystemDetailsPanel;

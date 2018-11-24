@@ -8,6 +8,7 @@ import { withClientState } from "apollo-link-state";
 import { defaults, typeDefs, resolvers } from "./schema";
 
 import { ApolloProvider } from "react-apollo";
+import { ApolloProvider as ApolloProviderHooks } from "react-apollo-hooks";
 import App from "./components/App";
 
 const cache = new InMemoryCache();
@@ -20,9 +21,12 @@ const createClient = () =>
   });
 
 const renderApp = () => {
+  const client = createClient();
   render(
-    <ApolloProvider client={createClient()}>
-      <App />
+    <ApolloProvider client={client}>
+      <ApolloProviderHooks client={client}>
+        <App />
+      </ApolloProviderHooks>
     </ApolloProvider>,
     document.getElementById("root")
   );
