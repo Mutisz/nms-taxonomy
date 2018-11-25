@@ -35,7 +35,7 @@ const PlanetDetailsForm = ({
   const levels = [1, 2, 3, 4, 5, 6];
   return (
     <Form horizontal>
-      <FormGroup controlId="behaviour">
+      <FormGroup controlId="weather">
         <Col componentClass={ControlLabel} xs={4}>
           Weather
         </Col>
@@ -74,7 +74,9 @@ const PlanetDetailsForm = ({
           Moon
         </Col>
         <Col xs={8}>
-          <Checkbox
+          <input
+            id="isMoon"
+            type="checkbox"
             checked={isMoon}
             onChange={handleCheckboxChange(update, "isMoon")}
           />

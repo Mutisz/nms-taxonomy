@@ -32,7 +32,7 @@ const renderFormControlWithOverlay = (options, value, onChange, tooltip) => (
         placement="bottom"
         overlay={tooltip}
       >
-        <Button>
+        <Button aria-label="Help">
           <Glyphicon glyph="question-sign" />
         </Button>
       </OverlayTrigger>

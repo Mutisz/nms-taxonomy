@@ -52,7 +52,6 @@ const FaunaDetailsForm = ({ update, genus, behaviour }) => (
       onChange={handleFieldChange(update, "genus")}
       tooltip={genusPopover}
     />
-
     <FormGroup controlId="behaviour">
       <Col componentClass={ControlLabel} xs={4}>
         Behaviour
