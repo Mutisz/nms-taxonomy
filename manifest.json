@@ -1,6 +1,7 @@
 {
   "short_name": "NMS Taxonomy",
-  "name": "No Man's Sky name generator",
+  "name": "No Man's Sky Taxonomy",
+  "description": "No Man's Sky name generator",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#eeeeee",
   "background_color": "#ffffff"
 }
