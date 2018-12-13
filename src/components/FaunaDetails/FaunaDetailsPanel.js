@@ -30,6 +30,7 @@ const FAUNA_DETAILS_QUERY = gql`
     faunaDetails @client {
       genus
       behaviour
+      gender
     }
   }
 `;

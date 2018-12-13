@@ -228,6 +228,43 @@ const behaviourOptionList = [
   "aegir"
 ];
 
+const genderOptionList = [
+  "ull",
+  "freyja",
+  "mani",
+  "saga",
+  "mimir",
+  "meili",
+  "bil",
+  "sol",
+  "fulla",
+  "hretha",
+  "eir",
+  "magni",
+  "irpa",
+  "lofn",
+  "narvi",
+  "idun",
+  "zisa",
+  "odin",
+  "rig",
+  "day",
+  "vor",
+  "var",
+  "saxnot",
+  "hod",
+  "freyr",
+  "thor",
+  "od",
+  "balder",
+  "syn",
+  "dellingr",
+  "loki",
+  "hel",
+  "rindr",
+  "aegir"
+];
+
 export const TAXONOMY_ID = "Odin";
 
 export default {
@@ -237,5 +274,6 @@ export default {
   sentinelMap,
   faunaMap,
   floraMap,
-  behaviourOptionList
+  behaviourOptionList,
+  genderOptionList
 };

@@ -42,7 +42,7 @@ const handleFieldChange = curry((update, field, e) =>
   })
 );
 
-const FaunaDetailsForm = ({ update, genus, behaviour }) => (
+const FaunaDetailsForm = ({ update, genus, behaviour, gender }) => (
   <Form horizontal>
     <SelectInput
       controlId="genus"
@@ -60,8 +60,21 @@ const FaunaDetailsForm = ({ update, genus, behaviour }) => (
         <FormControl
           type="text"
           value={behaviour}
-          placeholder="ex. Indifferent"
+          placeholder="Creature behaviour description"
           onChange={handleFieldChange(update, "behaviour")}
+        />
+      </Col>
+    </FormGroup>
+    <FormGroup controlId="gender">
+      <Col componentClass={ControlLabel} xs={4}>
+        Gender
+      </Col>
+      <Col xs={8}>
+        <FormControl
+          type="text"
+          value={gender}
+          placeholder="Creature gender description"
+          onChange={handleFieldChange(update, "gender")}
         />
       </Col>
     </FormGroup>

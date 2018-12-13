@@ -237,6 +237,17 @@ const behaviourOptionList = [
   "Yog Sothoth"
 ];
 
+// Using Great Ones
+const genderOptionList = [
+  "Hagarg Ryonis",
+  "Karakal",
+  "Lobon",
+  "Nath-Horthath",
+  "Oukranos",
+  "Tamash",
+  "Zo-Kalar"
+];
+
 export const TAXONOMY_ID = "Antediluvian";
 
 export default {
@@ -246,5 +257,6 @@ export default {
   sentinelMap,
   faunaMap,
   floraMap,
-  behaviourOptionList
+  behaviourOptionList,
+  genderOptionList
 };

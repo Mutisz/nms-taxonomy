@@ -23,15 +23,8 @@ export const defaults = {
   faunaDetails: {
     __typename: "FaunaDetails",
     genus: DEFAULT_GENUS,
-    behaviour: ""
-  },
-  floraDetails: {
-    __typename: "FloraDetails",
-    genus: null
-  },
-  waypointDetails: {
-    __typename: "WaypointDetails",
-    structure: null
+    behaviour: "",
+    gender: ""
   }
 };
 
@@ -56,15 +49,8 @@ export const typeDefs = `
 
   type FaunaDetails {
     genus: String
-    behaviour: String
-  }
-
-  type FloraDetails {
-    genus: String
-  }
-
-  type WaypointDetails {
-    structure: String
+    behaviour: String,
+    gender: String
   }
 
   type Query {
